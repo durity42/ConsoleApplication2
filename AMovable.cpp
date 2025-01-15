@@ -1,22 +1,26 @@
 #include "AMovable.h"
 
-AMovable::AMovable(float x, float y, float S) : UniVector(x, y)
+AMovable::AMovable(const Vector2& direction, float speed) : mDirection(direction), mSpeed(speed)
 {
 
 }
 
-void AMovable::setDirection(float x, float y)
+void AMovable::setDirection(const Vector2& direction)
 {
-	UniVector.setx(x);
-	UniVector.sety(y);
+    mDirection = direction;
 }
 
-void AMovable::setSpeed(float S)
+void AMovable::setSpeed(float speed)
 {
-	Speed = S;
+    mSpeed = speed;
 }
 
-void AMovable::Move()
+Vector2 AMovable::getDirection() const
 {
+    return mDirection;
+}
 
+float AMovable::getSpeed() const
+{
+    return mSpeed;
 }
